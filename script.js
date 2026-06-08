@@ -110,6 +110,31 @@ document.querySelectorAll("[data-open-video]").forEach((button) => {
   button.addEventListener("click", () => openVideo(button.dataset.openVideo, button));
 });
 
+const lazyAutoplayVideos = [...document.querySelectorAll("[data-lazy-video]")];
+
+if (lazyAutoplayVideos.length) {
+  const videoObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const video = entry.target;
+        const source = video.querySelector("source");
+        if (entry.isIntersecting) {
+          if (source && !source.getAttribute("src")) {
+            source.setAttribute("src", video.dataset.lazyVideo);
+            video.load();
+          }
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      });
+    },
+    { rootMargin: "220px 0px", threshold: 0.2 }
+  );
+
+  lazyAutoplayVideos.forEach((video) => videoObserver.observe(video));
+}
+
 document.querySelectorAll("[data-open-image]").forEach((button) => {
   button.addEventListener("click", () => {
     const image = button.querySelector("img");

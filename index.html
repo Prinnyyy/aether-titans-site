@@ -249,17 +249,21 @@
       </section>
 
       <section class="section titans" id="titans">
-        <button class="titan-media reveal media-preview" data-open-video="Materials/video/我方召唤机甲1.mp4">
-          <img
-            src="Materials/optimized/prayer-1000.jpg"
-            alt="Aurion awakening cinematic preview"
-            width="1000"
-            height="562"
-            loading="lazy"
-            decoding="async"
-          />
-          <span>Play Titan Preview</span>
-        </button>
+        <div class="titan-media reveal">
+          <video
+            class="lazy-autoplay-video"
+            data-lazy-video="Materials/video/我方召唤机甲1.mp4"
+            muted
+            autoplay
+            playsinline
+            loop
+            preload="none"
+            poster="Materials/optimized/prayer-1000.jpg"
+            aria-label="Aurion awakening cinematic preview"
+          >
+            <source type="video/mp4" />
+          </video>
+        </div>
         <div class="titan-copy reveal">
           <p class="section-label">RELIC TITANS</p>
           <h2>Ancient guardians shaped by a forgotten age.</h2>
@@ -291,8 +295,18 @@
           <p>A cinematic preview of floating kingdoms, awakened relics, and the companions who rise when the clouds begin to fall.</p>
         </div>
         <div class="trailer-frame reveal">
-          <video controls playsinline preload="none" poster="Materials/optimized/wide-scenes-1200.jpg">
-            <source src="Materials/video/3个游戏分镜展示.mp4" type="video/mp4" />
+          <video
+            class="lazy-autoplay-video"
+            data-lazy-video="Materials/video/3个游戏分镜展示.mp4"
+            controls
+            autoplay
+            muted
+            playsinline
+            loop
+            preload="none"
+            poster="Materials/optimized/wide-scenes-1200.jpg"
+          >
+            <source type="video/mp4" />
           </video>
         </div>
       </section>
@@ -351,7 +365,19 @@
       </section>
 
       <section class="final-cta" id="cta">
-        <img src="Materials/optimized/wide-scenes-1200.jpg" alt="" width="1200" height="337" loading="lazy" decoding="async" aria-hidden="true" />
+        <video
+          class="final-cta-video lazy-autoplay-video"
+          data-lazy-video="Materials/video/手绘原画滚动图.mp4"
+          muted
+          autoplay
+          playsinline
+          loop
+          preload="none"
+          poster="Materials/optimized/wide-scenes-1200.jpg"
+          aria-hidden="true"
+        >
+          <source type="video/mp4" />
+        </video>
         <div class="final-content reveal">
           <p class="section-label">AETHER TITANS</p>
           <h2>The sky remembers every vow.</h2>
