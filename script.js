@@ -7,6 +7,7 @@ const heroButtons = [...document.querySelectorAll("[data-hero-src]")];
 const modal = document.querySelector("[data-modal]");
 const modalBody = document.querySelector("[data-modal-body]");
 const closeModalButton = document.querySelector("[data-close-modal]");
+let modalReturnFocus = null;
 
 const heroQueue = heroButtons.map((button) => button.dataset.heroSrc);
 let activeHeroIndex = 0;
@@ -36,18 +37,21 @@ function toggleMenu(forceOpen) {
   body.classList.toggle("menu-open", shouldOpen);
   menuToggle.setAttribute("aria-expanded", String(shouldOpen));
   drawer.setAttribute("aria-hidden", String(!shouldOpen));
+  drawer.inert = !shouldOpen;
 }
 
-function openVideo(src) {
+function openVideo(src, trigger = null) {
+  modalReturnFocus = trigger;
   modalBody.innerHTML = `
-    <video controls autoplay playsinline>
+    <video controls autoplay playsinline preload="auto">
       <source src="${src}" type="video/mp4" />
     </video>
   `;
   openModal();
 }
 
-function openImage(src, alt = "") {
+function openImage(src, alt = "", trigger = null) {
+  modalReturnFocus = trigger;
   modalBody.innerHTML = `<img src="${src}" alt="${alt}" />`;
   openModal();
 }
@@ -55,6 +59,7 @@ function openImage(src, alt = "") {
 function openModal() {
   modal.classList.add("is-open");
   modal.setAttribute("aria-hidden", "false");
+  modal.inert = false;
   body.classList.add("modal-open");
   closeModalButton.focus();
 }
@@ -62,8 +67,11 @@ function openModal() {
 function closeModal() {
   modal.classList.remove("is-open");
   modal.setAttribute("aria-hidden", "true");
+  modal.inert = true;
   body.classList.remove("modal-open");
   modalBody.innerHTML = "";
+  modalReturnFocus?.focus?.();
+  modalReturnFocus = null;
 }
 
 setScrolledHeader();
@@ -72,6 +80,9 @@ window.addEventListener("scroll", setScrolledHeader, { passive: true });
 if (menuToggle) {
   menuToggle.addEventListener("click", () => toggleMenu());
 }
+
+drawer.inert = true;
+modal.inert = true;
 
 drawer?.addEventListener("click", (event) => {
   if (event.target.matches("a")) {
@@ -87,14 +98,22 @@ heroVideo?.addEventListener("ended", () => {
   setActiveHero((activeHeroIndex + 1) % heroQueue.length);
 });
 
+window.addEventListener(
+  "load",
+  () => {
+    window.requestIdleCallback ? requestIdleCallback(() => setActiveHero(0)) : setTimeout(() => setActiveHero(0), 250);
+  },
+  { once: true }
+);
+
 document.querySelectorAll("[data-open-video]").forEach((button) => {
-  button.addEventListener("click", () => openVideo(button.dataset.openVideo));
+  button.addEventListener("click", () => openVideo(button.dataset.openVideo, button));
 });
 
 document.querySelectorAll("[data-open-image]").forEach((button) => {
   button.addEventListener("click", () => {
     const image = button.querySelector("img");
-    openImage(button.dataset.openImage, image?.alt || "");
+    openImage(button.dataset.openImage, image?.alt || "", button);
   });
 });
 
@@ -142,24 +161,3 @@ const sectionObserver = new IntersectionObserver(
 );
 
 sections.forEach((section) => sectionObserver.observe(section));
-
-document.querySelectorAll(".video-tile video").forEach((video) => {
-  video.play().catch(() => {});
-});
-
-const ambientVideos = [...document.querySelectorAll("video[autoplay]")].filter((video) => video !== heroVideo);
-const videoObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      const video = entry.target;
-      if (entry.isIntersecting) {
-        video.play().catch(() => {});
-      } else {
-        video.pause();
-      }
-    });
-  },
-  { threshold: 0.2 }
-);
-
-ambientVideos.forEach((video) => videoObserver.observe(video));

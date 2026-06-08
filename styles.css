@@ -13,9 +13,9 @@
   --sky: #dff3ff;
   --navy: #071523;
   --shadow: 0 18px 50px rgba(39, 74, 95, 0.18);
-  --heading: "Cinzel", "Cormorant Garamond", Georgia, serif;
-  --cn-serif: "Noto Serif SC", "Songti SC", serif;
-  --body: "Noto Serif SC", "Times New Roman", serif;
+  --heading: "Cinzel", Georgia, serif;
+  --cn-serif: Georgia, "Times New Roman", "Songti SC", serif;
+  --body: Georgia, "Times New Roman", "Songti SC", serif;
 }
 
 * {
@@ -700,7 +700,7 @@ h3 {
   width: 46px;
   height: 46px;
   color: #fff;
-  background: var(--relink-blue);
+  background: var(--relink-deep);
   border: 1px solid var(--relink-gold);
 }
 
@@ -721,15 +721,43 @@ h3 {
 }
 
 .titan-media {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
   padding: 12px;
+  background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(216, 167, 58, 0.56);
   box-shadow: 0 22px 70px rgba(0, 0, 0, 0.35);
 }
 
-.titan-media video {
+.titan-media img {
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.media-preview::after {
+  position: absolute;
+  inset: 12px;
+  background: linear-gradient(180deg, transparent 42%, rgba(7, 21, 35, 0.72));
+  content: "";
+}
+
+.media-preview span {
+  position: absolute;
+  right: 30px;
+  bottom: 28px;
+  z-index: 2;
+  color: #fff;
+  font-family: var(--heading);
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.media-preview:hover img {
+  transform: scale(1.03);
 }
 
 .titan-copy h2,
@@ -843,8 +871,7 @@ h3 {
   grid-row: span 2;
 }
 
-.gallery-item img,
-.gallery-item video {
+.gallery-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -868,8 +895,7 @@ h3 {
   line-height: 1.55;
 }
 
-.gallery-item:hover img,
-.gallery-item:hover video {
+.gallery-item:hover img {
   transform: scale(1.04);
 }
 
@@ -884,7 +910,7 @@ h3 {
   text-align: center;
 }
 
-.final-cta video {
+.final-cta > img {
   position: absolute;
   inset: 0;
   width: 100%;

@@ -8,12 +8,14 @@
       name="description"
       content="A fan-made cinematic game showcase website concept for an anime sky-fantasy action strategy RPG featuring floating kingdoms, heroic companions, and ancient Titans."
     />
+    <meta property="og:title" content="AETHER TITANS: RELICS OF THE SKY" />
+    <meta property="og:description" content="Beyond the clouds, ancient powers wait to be awakened." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="Materials/optimized/story-1600.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:wght@500;600;700&family=Noto+Serif+SC:wght@500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&display=swap" rel="stylesheet" />
+    <link rel="preload" as="image" href="Materials/optimized/hero-poster-900.jpg" fetchpriority="high" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -37,7 +39,7 @@
       </button>
     </header>
 
-    <aside class="nav-drawer" aria-hidden="true" data-drawer>
+    <aside class="nav-drawer" aria-hidden="true" inert data-drawer>
       <a href="#story">Story</a>
       <a href="#world">World</a>
       <a href="#characters">Characters</a>
@@ -56,9 +58,11 @@
             autoplay
             muted
             playsinline
-            poster="Materials/image/少女祈祷.webp"
+            loop
+            preload="metadata"
+            poster="Materials/optimized/hero-poster-900.jpg"
           >
-            <source src="Materials/video/少女唤醒机甲1.mp4" type="video/mp4" />
+            <source data-src="Materials/video/少女唤醒机甲1.mp4" type="video/mp4" />
           </video>
         </div>
         <div class="hero-clouds" aria-hidden="true"></div>
@@ -98,7 +102,14 @@
       </section>
 
       <section class="story scenic-section" id="story">
-        <img src="Materials/image/实机截图2.webp" alt="Commanders fighting before a bright castle under the sky" />
+        <img
+          src="Materials/optimized/story-1600.jpg"
+          alt="Commanders fighting before a bright castle under the sky"
+          width="1600"
+          height="900"
+          loading="lazy"
+          decoding="async"
+        />
         <div class="story-panel reveal">
           <p class="section-label">STORY</p>
           <h2>To the realm where the sky remembers.</h2>
@@ -152,7 +163,14 @@
           </p>
         </div>
         <div class="character-stage reveal">
-          <img src="Materials/image/角色设计图.webp" alt="Character lineup for Aether Titans" />
+          <img
+            src="Materials/optimized/characters-1400.jpg"
+            alt="Character lineup for Aether Titans"
+            width="1400"
+            height="462"
+            loading="lazy"
+            decoding="async"
+          />
         </div>
         <div class="character-grid compact-roster">
           <article class="character-card reveal">
@@ -196,7 +214,14 @@
           </p>
         </div>
         <figure class="battlefield reveal">
-          <img src="Materials/image/实机截图1.webp" alt="Gameplay scenes showing armies, tactical magic, and sky combat" />
+          <img
+            src="Materials/optimized/gameplay-1600.jpg"
+            alt="Gameplay scenes showing armies, tactical magic, and sky combat"
+            width="1600"
+            height="900"
+            loading="lazy"
+            decoding="async"
+          />
           <figcaption>Commanders advance before the walls of Arclight Keep as sky cannons awaken above the battlefield.</figcaption>
         </figure>
         <div class="feature-grid">
@@ -224,11 +249,17 @@
       </section>
 
       <section class="section titans" id="titans">
-        <div class="titan-media reveal">
-          <video autoplay muted playsinline loop poster="Materials/image/少女祈祷.webp">
-            <source src="Materials/video/我方召唤机甲1.mp4" type="video/mp4" />
-          </video>
-        </div>
+        <button class="titan-media reveal media-preview" data-open-video="Materials/video/我方召唤机甲1.mp4">
+          <img
+            src="Materials/optimized/prayer-1000.jpg"
+            alt="Aurion awakening cinematic preview"
+            width="1000"
+            height="562"
+            loading="lazy"
+            decoding="async"
+          />
+          <span>Play Titan Preview</span>
+        </button>
         <div class="titan-copy reveal">
           <p class="section-label">RELIC TITANS</p>
           <h2>Ancient guardians shaped by a forgotten age.</h2>
@@ -260,7 +291,7 @@
           <p>A cinematic preview of floating kingdoms, awakened relics, and the companions who rise when the clouds begin to fall.</p>
         </div>
         <div class="trailer-frame reveal">
-          <video controls playsinline poster="Materials/image/实机截图3.webp">
+          <video controls playsinline preload="none" poster="Materials/optimized/wide-scenes-1200.jpg">
             <source src="Materials/video/3个游戏分镜展示.mp4" type="video/mp4" />
           </video>
         </div>
@@ -273,30 +304,54 @@
         </div>
         <div class="gallery-grid">
           <button class="gallery-item gallery-large reveal" data-open-image="Materials/image/将军率军指挥.webp">
-            <img src="Materials/image/将军率军指挥.webp" alt="A general directing troops in front of a royal castle" />
+            <img
+              src="Materials/optimized/gallery-general-1200.jpg"
+              alt="A general directing troops in front of a royal castle"
+              width="1200"
+              height="675"
+              loading="lazy"
+              decoding="async"
+            />
             <span>Commanders advance before the walls of Arclight Keep.</span>
           </button>
           <button class="gallery-item reveal" data-open-image="Materials/image/少女祈祷.webp">
-            <img src="Materials/image/少女祈祷.webp" alt="A princess praying beneath a blue sky" />
+            <img
+              src="Materials/optimized/prayer-1000.jpg"
+              alt="A princess praying beneath a blue sky"
+              width="1000"
+              height="562"
+              loading="lazy"
+              decoding="async"
+            />
             <span>A vow wakes beneath the morning sky.</span>
           </button>
           <button class="gallery-item reveal" data-open-image="Materials/image/实机截图3.webp">
-            <img src="Materials/image/实机截图3.webp" alt="Cavalry and enemy leader cinematic scenes" />
+            <img
+              src="Materials/optimized/wide-scenes-1200.jpg"
+              alt="Cavalry and enemy leader cinematic scenes"
+              width="1200"
+              height="337"
+              loading="lazy"
+              decoding="async"
+            />
             <span>Every island of the Skyreach carries unfinished vows.</span>
           </button>
           <button class="gallery-item video-tile reveal" data-open-video="Materials/video/游戏名称动画.mp4">
-            <video muted playsinline loop>
-              <source src="Materials/video/游戏名称动画.mp4" type="video/mp4" />
-            </video>
+            <img
+              src="Materials/optimized/wide-scenes-1200.jpg"
+              alt="Aether Titans title stinger preview"
+              width="1200"
+              height="337"
+              loading="lazy"
+              decoding="async"
+            />
             <span>A cinematic title stinger introduces the legend.</span>
           </button>
         </div>
       </section>
 
       <section class="final-cta" id="cta">
-        <video autoplay muted playsinline loop>
-          <source src="Materials/video/手绘原画滚动图.mp4" type="video/mp4" />
-        </video>
+        <img src="Materials/optimized/wide-scenes-1200.jpg" alt="" width="1200" height="337" loading="lazy" decoding="async" aria-hidden="true" />
         <div class="final-content reveal">
           <p class="section-label">AETHER TITANS</p>
           <h2>The sky remembers every vow.</h2>
@@ -327,7 +382,7 @@
       </p>
     </footer>
 
-    <div class="modal" aria-hidden="true" data-modal>
+    <div class="modal" aria-hidden="true" inert data-modal>
       <button class="modal-close" type="button" aria-label="Close modal" data-close-modal></button>
       <div class="modal-body" data-modal-body></div>
     </div>
