@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AETHER TITANS: RELICS OF THE SKY - Anime Sky-Fantasy RPG Concept Site</title>
+    <meta
+      name="description"
+      content="A fan-made cinematic game showcase website concept for an anime sky-fantasy action strategy RPG featuring floating kingdoms, heroic companions, and ancient Titans."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:wght@500;600;700&family=Noto+Serif+SC:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header" data-header>
+      <a class="brand" href="#hero" aria-label="AETHER TITANS home">
+        <span>AETHER</span>
+        <strong>TITANS</strong>
+      </a>
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="#story">Story</a>
+        <a href="#world">World</a>
+        <a href="#characters">Characters</a>
+        <a href="#gameplay">Gameplay</a>
+        <a href="#titans">Titans</a>
+        <a href="#media">Media</a>
+      </nav>
+      <button class="line-button header-cta" data-open-video="Materials/video/3个游戏分镜展示.mp4">Watch Trailer</button>
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-menu-toggle>
+        <span></span>
+        <span></span>
+      </button>
+    </header>
+
+    <aside class="nav-drawer" aria-hidden="true" data-drawer>
+      <a href="#story">Story</a>
+      <a href="#world">World</a>
+      <a href="#characters">Characters</a>
+      <a href="#gameplay">Gameplay</a>
+      <a href="#titans">Titans</a>
+      <a href="#media">Media</a>
+      <button class="line-button" data-open-video="Materials/video/3个游戏分镜展示.mp4">Watch Trailer</button>
+    </aside>
+
+    <main>
+      <section class="hero" id="hero" aria-label="Opening cinematic">
+        <div class="hero-video-wrap">
+          <video
+            class="hero-video"
+            data-hero-video
+            autoplay
+            muted
+            playsinline
+            poster="Materials/image/少女祈祷.webp"
+          >
+            <source src="Materials/video/少女唤醒机甲1.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="hero-clouds" aria-hidden="true"></div>
+        <div class="hero-shade" aria-hidden="true"></div>
+        <div class="hero-content reveal">
+          <p class="eyebrow">A SKY-FANTASY ACTION STRATEGY RPG</p>
+          <h1>
+            AETHER TITANS:
+            <span>RELICS OF THE SKY</span>
+          </h1>
+          <p class="hero-tagline">Beyond the clouds, ancient powers wait to be awakened.</p>
+          <p class="hero-copy">
+            Set sail across floating kingdoms, gather a crew of commanders, and challenge the forgotten Titans that shaped the age of sky and ruin.
+          </p>
+          <div class="hero-actions">
+            <button class="ornate-button" data-open-video="Materials/video/3个游戏分镜展示.mp4">Watch Trailer</button>
+            <a class="ghost-button" href="#story">Begin the Journey</a>
+          </div>
+        </div>
+        <div class="hero-meta reveal" aria-label="Game metadata">
+          <span><b>GENRE</b> Action Strategy RPG</span>
+          <span><b>STYLE</b> Anime Sky Fantasy</span>
+          <span><b>MODE</b> Story Campaign</span>
+          <span><b>STATUS</b> Portfolio Concept</span>
+        </div>
+        <div class="hero-reel" aria-label="Opening scene selector">
+          <button class="reel-dot is-active" data-hero-src="Materials/video/少女唤醒机甲1.mp4">
+            <span>01</span> Awakening
+          </button>
+          <button class="reel-dot" data-hero-src="Materials/video/角色从天而降进入战场动画.mp4">
+            <span>02</span> Descent
+          </button>
+          <button class="reel-dot" data-hero-src="Materials/video/战场整体展示.mp4">
+            <span>03</span> Skyfront
+          </button>
+        </div>
+      </section>
+
+      <section class="story scenic-section" id="story">
+        <img src="Materials/image/实机截图2.webp" alt="Commanders fighting before a bright castle under the sky" />
+        <div class="story-panel reveal">
+          <p class="section-label">STORY</p>
+          <h2>To the realm where the sky remembers.</h2>
+          <p>
+            There exists a world where kingdoms drift across a sea of clouds, their cities anchored to fragments of an ancient continent. For centuries,
+            the people of the sky lived beneath the protection of colossal relics known as Titans.
+          </p>
+          <p>
+            But the Titans have begun to stir. As islands fall into the storm below and old alliances fracture, a young commander is entrusted with a skyship,
+            a royal charge, and a forbidden relic capable of waking the machines that once ended an empire.
+          </p>
+          <blockquote>The journey begins at the edge of a collapsing kingdom - and ends where the first Titan opened its eyes.</blockquote>
+        </div>
+      </section>
+
+      <section class="section world" id="world">
+        <div class="section-heading reveal">
+          <p class="section-label">WORLD</p>
+          <h2>Explore the Skyreach, a frontier of islands, citadels, and forgotten engines.</h2>
+          <p>
+            The Skyreach is a chain of floating territories connected by trade winds, sky routes, and ancient Aether currents. Every island carries a different
+            history: royal fortresses, green frontier villages, abandoned workshops, and ruins where the Titans still dream beneath layers of stone.
+          </p>
+        </div>
+        <div class="location-grid">
+          <article class="location-card reveal">
+            <span>Royal Citadel</span>
+            <h3>Arclight Keep</h3>
+            <p>A fortress kingdom built around the last stable Aether Core. Its walls shine above the clouds, but its foundations hide an older war.</p>
+          </article>
+          <article class="location-card reveal">
+            <span>Frontier Wildlands</span>
+            <h3>Verdant Expanse</h3>
+            <p>A green island region where ancient engines sleep under open fields and rebel scouts protect villages beyond royal command.</p>
+          </article>
+          <article class="location-card reveal">
+            <span>Lost Titan Workshop</span>
+            <h3>The Astral Foundry</h3>
+            <p>A ruined mechanical sanctuary suspended between storm layers. No map marks its path, yet every faction seeks the weapons sealed within.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section characters" id="characters">
+        <div class="section-heading reveal">
+          <p class="section-label">CHARACTERS</p>
+          <h2>Meet the companions who carry the fate of the sky.</h2>
+          <p>
+            Each commander brings a distinct weapon, battlefield role, and personal vow. Build your party around their strengths, then uncover the choices that
+            bind them to the Titans.
+          </p>
+        </div>
+        <div class="character-stage reveal">
+          <img src="Materials/image/角色设计图.webp" alt="Character lineup for Aether Titans" />
+        </div>
+        <div class="character-grid compact-roster">
+          <article class="character-card reveal">
+            <span>Arclight Crown</span>
+            <h3>Elyra Vane</h3>
+            <p class="role">Royal Shieldbearer</p>
+            <p class="weapon">Aegis Blade & Crest Shield</p>
+            <blockquote>If the sky must fall, then I will hold it a little longer.</blockquote>
+          </article>
+          <article class="character-card reveal">
+            <span>Verdant Free Company</span>
+            <h3>Seren Altair</h3>
+            <p class="role">Aether Duelist</p>
+            <p class="weapon">Resonance Lightblade</p>
+            <blockquote>Orders are easy. Conviction is harder.</blockquote>
+          </article>
+          <article class="character-card reveal">
+            <span>Independent Skyfarer</span>
+            <h3>Lioren Kael</h3>
+            <p class="role">Skyship Tactician</p>
+            <p class="weapon">Command Codex & Signal Pistol</p>
+            <blockquote>A good captain reads the wind before the battlefield.</blockquote>
+          </article>
+          <article class="character-card reveal">
+            <span>Astral Foundry Remnant</span>
+            <h3>Orvan Kade</h3>
+            <p class="role">Relic Engineer</p>
+            <p class="weapon">Remote Artillery Array</p>
+            <blockquote>Machines do not betray us. People do.</blockquote>
+          </article>
+        </div>
+      </section>
+
+      <section class="section gameplay" id="gameplay">
+        <div class="section-heading reveal">
+          <p class="section-label">GAMEPLAY</p>
+          <h2>Fast party action meets battlefield command.</h2>
+          <p>
+            Lead a party of commanders in real-time encounters where positioning, timing, and companion synergy decide each battle. Switch between tactical
+            orders and cinematic special attacks as the enemy line closes in.
+          </p>
+        </div>
+        <figure class="battlefield reveal">
+          <img src="Materials/image/实机截图1.webp" alt="Gameplay scenes showing armies, tactical magic, and sky combat" />
+          <figcaption>Commanders advance before the walls of Arclight Keep as sky cannons awaken above the battlefield.</figcaption>
+        </figure>
+        <div class="feature-grid">
+          <article class="feature-card reveal">
+            <span>01</span>
+            <h3>Party-Based Combat</h3>
+            <p>Build a crew of commanders with different roles: shieldbearers, duelists, artillery callers, and Aether casters.</p>
+          </article>
+          <article class="feature-card reveal">
+            <span>02</span>
+            <h3>Link Arts</h3>
+            <p>Chain companion abilities to stagger elite foes, protect allies, and trigger powerful team attacks at critical moments.</p>
+          </article>
+          <article class="feature-card reveal">
+            <span>03</span>
+            <h3>Skyfront Missions</h3>
+            <p>Defend citadels, break siege lines, escort skyships, and hunt ancient beasts across layered battlefield objectives.</p>
+          </article>
+          <article class="feature-card reveal">
+            <span>04</span>
+            <h3>Relic Awakening</h3>
+            <p>Charge resonance through combat and call upon Titan relics to unleash battlefield-changing powers.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section titans" id="titans">
+        <div class="titan-media reveal">
+          <video autoplay muted playsinline loop poster="Materials/image/少女祈祷.webp">
+            <source src="Materials/video/我方召唤机甲1.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="titan-copy reveal">
+          <p class="section-label">RELIC TITANS</p>
+          <h2>Ancient guardians shaped by a forgotten age.</h2>
+          <p>
+            Titans are living relics born from Aether and ancient craft. Some were once worshiped as protectors, while others were sealed away as weapons too
+            dangerous for any kingdom to command.
+          </p>
+          <article class="titan-profile">
+            <h3>Aurion, Celestial Aegis</h3>
+            <p>
+              A golden guardian Titan said to have shielded the upper citadels during the first skyfall. Aurion gathers lightning around its armor and creates
+              radiant barriers that protect allied forces from annihilation.
+            </p>
+            <dl>
+              <div><dt>Type</dt><dd>Guardian Relic</dd></div>
+              <div><dt>Element</dt><dd>Stormlight Aether</dd></div>
+              <div><dt>Role</dt><dd>Barrier / Counterattack / Area Control</dd></div>
+              <div><dt>Awakening Art</dt><dd>Crown of Thunder</dd></div>
+            </dl>
+            <strong>Build resonance. Choose the moment. Let the ancient guardian answer.</strong>
+          </article>
+        </div>
+      </section>
+
+      <section class="section trailer" id="trailer">
+        <div class="section-heading reveal">
+          <p class="section-label">TRAILER</p>
+          <h2>Watch the sky open.</h2>
+          <p>A cinematic preview of floating kingdoms, awakened relics, and the companions who rise when the clouds begin to fall.</p>
+        </div>
+        <div class="trailer-frame reveal">
+          <video controls playsinline poster="Materials/image/实机截图3.webp">
+            <source src="Materials/video/3个游戏分镜展示.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </section>
+
+      <section class="section media" id="media">
+        <div class="section-heading reveal">
+          <p class="section-label">MEDIA</p>
+          <h2>A journey painted in sky, steel, and Aether light.</h2>
+        </div>
+        <div class="gallery-grid">
+          <button class="gallery-item gallery-large reveal" data-open-image="Materials/image/将军率军指挥.webp">
+            <img src="Materials/image/将军率军指挥.webp" alt="A general directing troops in front of a royal castle" />
+            <span>Commanders advance before the walls of Arclight Keep.</span>
+          </button>
+          <button class="gallery-item reveal" data-open-image="Materials/image/少女祈祷.webp">
+            <img src="Materials/image/少女祈祷.webp" alt="A princess praying beneath a blue sky" />
+            <span>A vow wakes beneath the morning sky.</span>
+          </button>
+          <button class="gallery-item reveal" data-open-image="Materials/image/实机截图3.webp">
+            <img src="Materials/image/实机截图3.webp" alt="Cavalry and enemy leader cinematic scenes" />
+            <span>Every island of the Skyreach carries unfinished vows.</span>
+          </button>
+          <button class="gallery-item video-tile reveal" data-open-video="Materials/video/游戏名称动画.mp4">
+            <video muted playsinline loop>
+              <source src="Materials/video/游戏名称动画.mp4" type="video/mp4" />
+            </video>
+            <span>A cinematic title stinger introduces the legend.</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="final-cta" id="cta">
+        <video autoplay muted playsinline loop>
+          <source src="Materials/video/手绘原画滚动图.mp4" type="video/mp4" />
+        </video>
+        <div class="final-content reveal">
+          <p class="section-label">AETHER TITANS</p>
+          <h2>The sky remembers every vow.</h2>
+          <p>
+            Begin a heroic anime adventure across floating kingdoms, ancient ruins, and battles where every companion carries a reason to fight.
+          </p>
+          <div class="hero-actions">
+            <a class="ornate-button" href="#story">Begin the Journey</a>
+            <a class="ghost-button" href="#media">View Media Gallery</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <strong>AETHER TITANS: RELICS OF THE SKY</strong>
+      <nav aria-label="Footer navigation">
+        <a href="#story">Story</a>
+        <a href="#world">World</a>
+        <a href="#characters">Characters</a>
+        <a href="#gameplay">Gameplay</a>
+        <a href="#titans">Titans</a>
+        <a href="#media">Media</a>
+      </nav>
+      <p>
+        Fan-made concept website for portfolio practice. Visual materials are used only as design references/placeholders. All original assets belong to their
+        respective owners.
+      </p>
+    </footer>
+
+    <div class="modal" aria-hidden="true" data-modal>
+      <button class="modal-close" type="button" aria-label="Close modal" data-close-modal></button>
+      <div class="modal-body" data-modal-body></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
