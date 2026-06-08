@@ -113,16 +113,46 @@ document.querySelectorAll("[data-open-video]").forEach((button) => {
 const lazyAutoplayVideos = [...document.querySelectorAll("[data-lazy-video]")];
 
 if (lazyAutoplayVideos.length) {
+  let lazyVideoTicking = false;
+
+  function loadLazyVideo(video) {
+    const source = video.querySelector("source");
+    if (source && !source.getAttribute("src")) {
+      source.setAttribute("src", video.dataset.lazyVideo);
+      video.load();
+    }
+  }
+
+  function isVideoNearViewport(video) {
+    const rect = video.getBoundingClientRect();
+    const margin = Math.min(window.innerHeight * 0.5, 360);
+    return rect.bottom >= -margin && rect.top <= window.innerHeight + margin;
+  }
+
+  function syncLazyAutoplayVideos() {
+    lazyVideoTicking = false;
+    lazyAutoplayVideos.forEach((video) => {
+      if (isVideoNearViewport(video) && document.visibilityState !== "hidden") {
+        loadLazyVideo(video);
+        video.play().catch(() => {});
+      } else {
+        video.pause();
+      }
+    });
+  }
+
+  function requestLazyVideoSync() {
+    if (lazyVideoTicking) return;
+    lazyVideoTicking = true;
+    requestAnimationFrame(syncLazyAutoplayVideos);
+  }
+
   const videoObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         const video = entry.target;
-        const source = video.querySelector("source");
         if (entry.isIntersecting) {
-          if (source && !source.getAttribute("src")) {
-            source.setAttribute("src", video.dataset.lazyVideo);
-            video.load();
-          }
+          loadLazyVideo(video);
           video.play().catch(() => {});
         } else {
           video.pause();
@@ -133,6 +163,12 @@ if (lazyAutoplayVideos.length) {
   );
 
   lazyAutoplayVideos.forEach((video) => videoObserver.observe(video));
+  window.addEventListener("scroll", requestLazyVideoSync, { passive: true });
+  window.addEventListener("resize", requestLazyVideoSync);
+  window.addEventListener("pageshow", requestLazyVideoSync);
+  document.addEventListener("visibilitychange", requestLazyVideoSync);
+  requestLazyVideoSync();
+  setTimeout(requestLazyVideoSync, 600);
 }
 
 document.querySelectorAll("[data-open-image]").forEach((button) => {
